@@ -20,6 +20,12 @@ def create_app(test_config=None):
     @app.route('/coolkids')
     def be_cool():
         return "Be cool, man, be coooool! You're almost a FSND grad!"
+    
+    # First of all, Endpoint "g"et actors" shall be implemented
+    @app.route('/actors')
+    def get_actors():
+        return_statement = 'The endpoint for getting actors is not yet implemented'
+        return return_statement
 
     return app
 
