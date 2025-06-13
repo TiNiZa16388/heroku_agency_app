@@ -1,5 +1,5 @@
 import os
-from sqlalchemy import Column, String, create_engine
+from sqlalchemy import Column, String, create_engine, Date, Integer
 from flask_sqlalchemy import SQLAlchemy
 import json
 
@@ -41,3 +41,43 @@ class Person(db.Model):
       'id': self.id,
       'name': self.name,
       'catchphrase': self.catchphrase}
+  
+
+  # adding movies model
+'''
+Movie class with
+title and
+release date
+'''
+class Movie(db.Model):
+  __tablename__ = 'Movie'
+
+  id = Column(db.Integer, primary_key=True)
+  title = Column(String, nullable=False)
+  release_date = Column(Date, nullable=False)
+
+  def format(self):
+    return {
+      'id': self.id,
+      'title': self.title,
+      'release_date': self.release_date}
+
+  # adding Actors model
+'''
+Actor class with
+name, age and gender
+'''
+class Actor(db.Model):
+  __tablename__ = 'Actor'
+
+  id = Column(db.Integer, primary_key=True)
+  name = Column(db.String, nullable=False)
+  age = Column(Integer, nullable=False)
+  gender = Column(String, nullable=False)
+
+  def format(self):
+    return {
+      'id': self.id,
+      'name': self.name,
+      'age': self.age,
+      'gender': self.gender}
