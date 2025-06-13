@@ -21,16 +21,16 @@ def create_app(test_config=None):
     def be_cool():
         return "Be cool, man, be coooool! You're almost a FSND grad!"
     
-    # First of all, Endpoint "g"et actors" shall be implemented
-    @app.route('/actors')
-    def get_actors():
-        return_statement = 'The endpoint for getting actors is not yet implemented'
-        return return_statement
+    # # First of all, Endpoint "g"et actors" shall be implemented
+    # @app.route('/actors')
+    # def get_actors():
+    #     return_statement = 'The endpoint for getting actors is not yet implemented'
+    #     return return_statement
     
-    # Implement the endpoint for getting all movies
-    @app.route('/movies')
-    def get_movies():
-        return 'No movies implemented yet.'
+    # # Implement the endpoint for getting all movies
+    # @app.route('/movies')
+    # def get_movies():
+    #     return 'No movies implemented yet.'
     
     # # Implement the endpoint for deletion of actors
     # @app.route("/actors/<int:actor_id>", methods=["DELETE"])
