@@ -1,5 +1,5 @@
 import os
-from sqlalchemy import Column, String, create_engine, Date, Integer
+from sqlalchemy import Column, String, create_engine, Date, Integer, ForeignKey
 from flask_sqlalchemy import SQLAlchemy
 import json
 
@@ -43,6 +43,24 @@ class Person(db.Model):
       'catchphrase': self.catchphrase}
   
 
+'''
+Cast class with references
+to movies and actors
+'''
+class Cast_Reference(db.Model):
+  __tablename__ = 'cast_reference'
+
+  id = Column(db.Integer, primary_key=True)
+  actor_id = Column(db.Integer, ForeignKey('actor.id'))
+  movie_id = Column(db.Integer, ForeignKey('movie.id'))
+
+  def format(self):
+    return {
+      'id': self.id,
+      'actor_id': self.actor_id,
+      'movie_id': self.movie_id
+    }
+
   # adding movies model
 '''
 Movie class with
@@ -50,11 +68,15 @@ title and
 release date
 '''
 class Movie(db.Model):
-  __tablename__ = 'Movie'
+  __tablename__ = 'movie'
 
   id = Column(db.Integer, primary_key=True)
   title = Column(String, nullable=False)
   release_date = Column(Date, nullable=False)
+
+  actors = db.relationship('Actor',
+                           secondary=Cast_Reference.__tablename__,
+                           back_populates='movies')
 
   def format(self):
     return {
@@ -68,12 +90,17 @@ Actor class with
 name, age and gender
 '''
 class Actor(db.Model):
-  __tablename__ = 'Actor'
+  __tablename__ = 'actor'
 
   id = Column(db.Integer, primary_key=True)
   name = Column(db.String, nullable=False)
   age = Column(Integer, nullable=False)
   gender = Column(String, nullable=False)
+
+  movies = db.relationship('Movie', 
+                           secondary=Cast_Reference.__tablename__,
+                           back_populates='actors')
+
 
   def format(self):
     return {
