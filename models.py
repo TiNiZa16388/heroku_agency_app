@@ -74,9 +74,24 @@ class Movie(db.Model):
   title = Column(String, nullable=False)
   release_date = Column(Date, nullable=False)
 
-  actors = db.relationship('Actor',
-                           secondary=Cast_Reference.__tablename__,
-                           back_populates='movies')
+  def __init__(self, title, release_date):
+    self.title = title
+    self.release_date = release_date
+
+  def insert(self):
+    db.session.add(self)
+    db.session.commit()
+
+  def update(self):
+    db.session.commit()
+
+  def delete(self):
+    db.session.delete(self)
+    db.session.commit()
+
+  # actors = db.relationship('Actor',
+  #                          secondary=Cast_Reference.__tablename__,
+  #                          back_populates='movies')
 
   def format(self):
     return {
@@ -97,10 +112,20 @@ class Actor(db.Model):
   age = Column(Integer, nullable=False)
   gender = Column(String, nullable=False)
 
-  movies = db.relationship('Movie', 
-                           secondary=Cast_Reference.__tablename__,
-                           back_populates='actors')
+  # movies = db.relationship('Movie', 
+  #                          secondary=Cast_Reference.__tablename__,
+  #                          back_populates='actors')
 
+  def insert(self):
+    db.session.add(self)
+    db.session.commit()
+
+  def update(self):
+    db.session.commit()
+
+  def delete(self):
+    db.session.delete(self)
+    db.session.commit()
 
   def format(self):
     return {
