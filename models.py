@@ -47,9 +47,9 @@ class Person(db.Model):
 Base = declarative_base()
 
 # associating table for the many-to-many relationship
-link_movie_actor = Table('link_movie_actor', Base.metadata,\
-  Column('actor_id', Integer, ForeignKey('actor.id', primary_key=True)),\
-  Column('movie_id', Integer, ForeignKey('movie.id'), primary_key=True))
+link_movie_actor = Table('link_movie_actor', db.Model.metadata,\
+  Column('actor_id', Integer, ForeignKey('actor.id')),\
+  Column('movie_id', Integer, ForeignKey('movie.id')))
 
 
 # adding movies model
