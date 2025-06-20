@@ -1,5 +1,6 @@
 import os
 from sqlalchemy import Column, String, create_engine, Date, Integer, ForeignKey
+from sqlalchemy import declarative_base, Table
 from flask_sqlalchemy import SQLAlchemy
 import json
 
@@ -43,25 +44,15 @@ class Person(db.Model):
       'catchphrase': self.catchphrase}
   
 
-'''
-Cast class with references
-to movies and actors
-'''
-class Cast_Reference(db.Model):
-  __tablename__ = 'cast_reference'
+Base = declarative_base()
 
-  id = Column(db.Integer, primary_key=True)
-  actor_id = Column(db.Integer, ForeignKey('actor.id'))
-  movie_id = Column(db.Integer, ForeignKey('movie.id'))
+# associating table for the many-to-many relationship
+link_movie_actor = Table('link_movie_actor', Base.metadata,\
+  Column('actor_id', Integer, ForeignKey('actor.id', primary_key=True)),\
+  Column('movie_id', Integer, ForeignKey('movie.id'), primary_key=True))
 
-  def format(self):
-    return {
-      'id': self.id,
-      'actor_id': self.actor_id,
-      'movie_id': self.movie_id
-    }
 
-  # adding movies model
+# adding movies model
 '''
 Movie class with
 title and
@@ -89,17 +80,19 @@ class Movie(db.Model):
     db.session.delete(self)
     db.session.commit()
 
-  # actors = db.relationship('Actor',
-  #                          secondary=Cast_Reference.__tablename__,
-  #                          back_populates='movies')
+  actors = db.relationship('Actor',
+                           secondary=link_movie_actor,
+                           back_populates='movies')
 
   def format(self):
+    actors_format = [actor.name for actor in self.actors]
     return {
       'id': self.id,
       'title': self.title,
-      'release_date': self.release_date}
+      'release_date': self.release_date,
+      'actors': actors_format}
 
-  # adding Actors model
+# adding Actors model
 '''
 Actor class with
 name, age and gender
@@ -112,9 +105,9 @@ class Actor(db.Model):
   age = Column(Integer, nullable=False)
   gender = Column(String, nullable=False)
 
-  # movies = db.relationship('Movie', 
-  #                          secondary=Cast_Reference.__tablename__,
-  #                          back_populates='actors')
+  movies = db.relationship('Movie', 
+                           secondary=link_movie_actor,
+                           back_populates='actors')
 
   def insert(self):
     db.session.add(self)
@@ -128,8 +121,10 @@ class Actor(db.Model):
     db.session.commit()
 
   def format(self):
+    movies_format = [movie.title for movie in self.movies]
     return {
       'id': self.id,
       'name': self.name,
       'age': self.age,
-      'gender': self.gender}
+      'gender': self.gender,
+      'movies': movies_format}
