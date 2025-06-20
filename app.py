@@ -21,7 +21,7 @@ def create_app(test_config=None):
     def be_cool():
         return "Be cool, man, be coooool! You're almost a FSND grad!"
     
-    # First of all, Endpoint "g"et actors" shall be implemented
+    # First of all, Endpoint "get actors" shall be implemented
     @app.route('/actors')
     def get_actors():
 
@@ -67,12 +67,14 @@ def create_app(test_config=None):
             if actor is None:
                 abort(404)
 
+            actor_format = actor.format()
+
             actor.delete()
 
             return jsonify(
                 {
                     "success": True,
-                    "deleted": actor_id
+                    "deleted": actor_format
                 }
             )
 
@@ -92,12 +94,14 @@ def create_app(test_config=None):
             if movie is None:
                 abort(404)
             
+            movie_format = movie.format()
+
             movie.delete()
 
             return jsonify(
                 {
                     "success": True,
-                    "deleted": movie_id
+                    "deleted": movie_format
                 }
             )
 
@@ -115,23 +119,28 @@ def create_app(test_config=None):
         try:
             new_title = body.get('title', None)
             new_release_date = body.get('release_date', None)
+            actor_ids = body.get('cast', None)
 
-            if new_title is None and new_release_date is None:
-                abort(22)
+            if new_title is None or new_release_date is None:
+                abort(422)
 
             movie = Movie(title=new_title,
                           release_date=new_release_date)
-            
+
+            if actor_ids is not None:
+                add_actors_to_cast(actor_ids=actor_ids, movie=movie)
+
             movie.insert()
 
             return  jsonify(
                 {
+                    "movie": movie.format(),
                     "success": True
                 }
             )
 
         except:
-            abort(22)
+            abort(422)
 
         return 'no posting implemented!'
 
@@ -145,6 +154,7 @@ def create_app(test_config=None):
             new_name = body.get('name', None)
             new_age = body.get('age', None)
             new_gender = body.get('gender', None)
+            movie_ids = body.get('movies', None)
 
             if new_name is None or \
                 new_age is None or \
@@ -154,11 +164,15 @@ def create_app(test_config=None):
             actor = Actor(name=new_name,
                           age=new_age,
                           gender=new_gender)
+            
+            if movie_ids is not None:
+                add_movies_of_actor(movie_ids=movie_ids, actor=actor)
 
             actor.insert()
 
             return jsonify(
                 {
+                    "actor": actor.format(),
                     "success": True
                 }
             )
@@ -184,21 +198,28 @@ def create_app(test_config=None):
                 abort(404)
             
             if 'name' in body:
-                
                 actor.name = body["name"]
             if "age" in body:
                 actor.age = body["age"]
             if "gender" in body:
                 actor.gender = body["gender"]
+            if "movies" in body:
+                # erase everything in the first place
+                actor.movies = []
+                actor.update()
+
+                # then append all newly configured references
+                movie_ids = body["movies"]
+                add_movies_of_actor(movie_ids=movie_ids, actor=actor)
             
             actor.update()
 
-            actor_formatted = actor.format()
+            actor_format = actor.format()
 
             return jsonify(
                     {
                         "success": True,
-                        "actor": actor_formatted
+                        "actor": actor_format
                     }
                 )
 
@@ -225,14 +246,23 @@ def create_app(test_config=None):
             if "release_date" in body:    
                 movie.release_date = body["release_date"]
 
+            if "actors" in body:
+                # erase everything in the first place
+                movie.actors = []
+                movie.update()
+
+                 # then append all newly configured references
+                actor_ids = body["actors"]
+                add_actors_to_cast(actor_ids=actor_ids, movie=movie)
+
             movie.update()
 
-            movie_formatted = movie.format()
+            movie_format = movie.format()
 
             return jsonify(
                 {
                     "success": True,
-                    "movie": movie_formatted
+                    "movie": movie_format
                 }
             )
 
@@ -276,6 +306,30 @@ def create_app(test_config=None):
             422,
         )
 
+
+    # define function for adding actors to the cast
+    # by providing the actor names 
+    def add_actors_to_cast(actor_ids, movie):
+        for actor_id in actor_ids:
+            actor = Actor.query.\
+                filter(Actor.id == actor_id).\
+                one_or_none()
+            if actor is not None\
+                and actor not in movie.actors:
+                movie.actors.append(actor)  
+
+
+    # define function for adding mvoies to the actor
+    # by providing the title 
+    def add_movies_of_actor(movie_ids, actor):
+        print(movie_ids)
+        for movie_id in movie_ids:
+            movie = Movie.query.\
+                filter(Movie.id == movie_id).\
+                one_or_none()
+            if movie is not None\
+                and movie not in actor.movies:
+                    actor.movies.append(movie)  
 
     return app
 

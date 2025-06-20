@@ -48,8 +48,8 @@ Base = declarative_base()
 
 # associating table for the many-to-many relationship
 link_movie_actor = Table('link_movie_actor', db.Model.metadata,\
-  Column('actor_id', Integer, ForeignKey('actor.id')),\
-  Column('movie_id', Integer, ForeignKey('movie.id')))
+  Column('actor_id', Integer, ForeignKey('actor.id'),primary_key=True),\
+  Column('movie_id', Integer, ForeignKey('movie.id'),primary_key=True))
 
 
 # adding movies model
@@ -62,7 +62,7 @@ class Movie(db.Model):
   __tablename__ = 'movie'
 
   id = Column(db.Integer, primary_key=True)
-  title = Column(String, nullable=False)
+  title = Column(String, nullable=False, unique=True)
   release_date = Column(Date, nullable=False)
 
   def __init__(self, title, release_date):
@@ -85,12 +85,12 @@ class Movie(db.Model):
                            back_populates='movies')
 
   def format(self):
-    actors_format = [actor.name for actor in self.actors]
+    actor_names = [actor.name for actor in self.actors]
     return {
       'id': self.id,
       'title': self.title,
       'release_date': self.release_date,
-      'actors': actors_format}
+      'actors': actor_names}
 
 # adding Actors model
 '''
@@ -101,7 +101,7 @@ class Actor(db.Model):
   __tablename__ = 'actor'
 
   id = Column(db.Integer, primary_key=True)
-  name = Column(db.String, nullable=False)
+  name = Column(db.String, nullable=False, unique=True)
   age = Column(Integer, nullable=False)
   gender = Column(String, nullable=False)
 
