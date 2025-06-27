@@ -2,6 +2,7 @@ import os
 from flask import Flask, jsonify, abort, request
 from models import setup_db, Movie, Actor
 from flask_cors import CORS
+from auth.auth import requires_auth
 
 def create_app(test_config=None):
 
@@ -17,13 +18,14 @@ def create_app(test_config=None):
             greeting = greeting + "!!!!! You are doing great in this Udacity project."
         return greeting
 
-    @app.route('/coolkids')
-    def be_cool():
-        return "Be cool, man, be coooool! You're almost a FSND grad!"
+    # @app.route('/coolkids')
+    # def be_cool():
+    #     return "Be cool, man, be coooool! You're almost a FSND grad!"
     
     # First of all, Endpoint "get actors" shall be implemented
     @app.route('/actors')
-    def get_actors():
+    @requires_auth('get:actors')
+    def get_actors(jws):
 
         actors = Actor.query.order_by(Actor.id).all()
 
@@ -40,7 +42,8 @@ def create_app(test_config=None):
     
     # Implement the endpoint for getting all movies
     @app.route('/movies')
-    def get_movies():
+    @requires_auth('get:movies')
+    def get_movies(jws):
 
         movies = Movie.query.order_by(Movie.id).all()
 
@@ -57,7 +60,8 @@ def create_app(test_config=None):
     
     # Implement the endpoint for deletion of actors
     @app.route("/actors/<int:actor_id>", methods=["DELETE"])
-    def delete_actor(actor_id):
+    @requires_auth('delete:actors')
+    def delete_actor(jws, actor_id):
         
         try:
             actor = Actor.query\
@@ -84,7 +88,8 @@ def create_app(test_config=None):
 
     # Implement the endpoint for deletion of movies
     @app.route("/movies/<int:movie_id>", methods=["DELETE"])
-    def delete_movie(movie_id):
+    @requires_auth('delete:movies')
+    def delete_movie(jws, movie_id):
 
         try:
             movie = Movie.query\
@@ -112,7 +117,8 @@ def create_app(test_config=None):
     
     # Implement the endpoint for movie posting
     @app.route("/movies", methods=["POST"])
-    def post_movie():
+    @requires_auth('post:movies')
+    def post_movie(jws):
 
         body = request.get_json()
 
@@ -146,7 +152,8 @@ def create_app(test_config=None):
 
     # Implement the endpoint for actor posting
     @app.route("/actors", methods=["POST"])
-    def post_actor():
+    @requires_auth('post:actors')
+    def post_actor(jws):
 
         body = request.get_json()
 
@@ -185,7 +192,8 @@ def create_app(test_config=None):
     
     # Implement the endpoint for the actor patching
     @app.route('/actors/<int:actor_id>',methods = ["PATCH"])
-    def patch_actor(actor_id):
+    @requires_auth('patch:actors')
+    def patch_actor(jws, actor_id):
 
         body = request.get_json()
 
@@ -227,7 +235,8 @@ def create_app(test_config=None):
             abort(400)
     
     @app.route('/movies/<movie_id>', methods=["PATCH"])
-    def patch_movie(movie_id):
+    @requires_auth('patch:movies')
+    def patch_movie(jws, movie_id):
 
         body = request.get_json()
 
@@ -330,6 +339,11 @@ def create_app(test_config=None):
             if movie is not None\
                 and movie not in actor.movies:
                     actor.movies.append(movie)  
+
+    @app.route('/headers')
+    @requires_auth
+    def headers(payload):
+        print(payload)
 
     return app
 
