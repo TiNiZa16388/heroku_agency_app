@@ -3,6 +3,7 @@ from flask import Flask, jsonify, abort, request
 from models import setup_db, Movie, Actor
 from flask_cors import CORS
 from auth.auth import requires_auth
+import markdown
 
 def create_app(test_config=None):
 
@@ -12,11 +13,14 @@ def create_app(test_config=None):
 
     @app.route('/')
     def get_greeting():
-        excited = os.environ['EXCITED']
-        greeting = "Hello" 
-        if excited == 'true': 
-            greeting = greeting + "!!!!! You are doing great in this Udacity project."
-        return greeting
+
+        file_object = open('README.md')
+        data = file_object.read()
+        file_object.close()
+
+        data_html = markdown.markdown(data)
+
+        return data_html        
 
     # @app.route('/coolkids')
     # def be_cool():
@@ -148,7 +152,7 @@ def create_app(test_config=None):
         except:
             abort(422)
 
-        return 'no posting implemented!'
+        return
 
     # Implement the endpoint for actor posting
     @app.route("/actors", methods=["POST"])
