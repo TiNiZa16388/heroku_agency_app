@@ -59,7 +59,7 @@ def create_app(test_config=None):
         return jsonify(
             {
                 "success": True,
-                "actors": movies_formatted
+                "movies": movies_formatted
             })
     
     # Implement the endpoint for deletion of actors
@@ -142,9 +142,13 @@ def create_app(test_config=None):
 
             movie.insert()
 
+            movies = Movie.query.order_by(Movie.id).all()
+
+            movies_formatted = [movie.format() for movie in movies]
+
             return  jsonify(
                 {
-                    "movie": movie.format(),
+                    "movies": movies_formatted,
                     "success": True
                 }
             )
@@ -181,9 +185,13 @@ def create_app(test_config=None):
 
             actor.insert()
 
+            actors = Actor.query.order_by(Actor.id).all()
+
+            actors_formatted = [actor.format() for actor in actors]
+
             return jsonify(
                 {
-                    "actor": actor.format(),
+                    "actors": actors_formatted,
                     "success": True
                 }
             )
@@ -226,14 +234,16 @@ def create_app(test_config=None):
             
             actor.update()
 
-            actor_format = actor.format()
+            actors = Actor.query.order_by(Actor.id).all()
+
+            actors_formatted = [actor.format() for actor in actors]
 
             return jsonify(
-                    {
-                        "success": True,
-                        "actor": actor_format
-                    }
-                )
+                {
+                    "actors": actors_formatted,
+                    "success": True
+                }
+            )
 
         except:
             abort(400)
@@ -270,12 +280,17 @@ def create_app(test_config=None):
 
             movie.update()
 
-            movie_format = movie.format()
+            movies = Movie.query.order_by(Actor.id).all()
+
+            if len(movies) == 0:
+                abort(422)
+
+            movies_formatted = [movie.format for movie in movies]
 
             return jsonify(
                 {
                     "success": True,
-                    "movie": movie_format
+                    "movies": movies_formatted
                 }
             )
 
