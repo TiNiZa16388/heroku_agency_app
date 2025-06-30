@@ -294,7 +294,7 @@ def create_app(test_config=None):
             if len(movies) == 0:
                 abort(422)
 
-            movies_formatted = [movie.format for movie in movies]
+            movies_formatted = [movie.format() for movie in movies]
 
             return jsonify(
                 {
