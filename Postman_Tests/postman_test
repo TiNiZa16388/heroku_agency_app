@@ -10,6 +10,624 @@
 			"name": "Requesting_Remote",
 			"item": [
 				{
+					"name": "Request_as_Casting_Assistant",
+					"item": [
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDkyMTgsImV4cCI6MTc1MTA1NjQxOCwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.W9keFCCDfS36dOw1DGizps_8XD37wEHkTfE2-8rV7cG21sMhkXYEBZTjx8DkDB7ESlZvpH26MKw8YjbdgIjNkA0eNdLIQsXBDTNb6Z6ybPZmSiF_8qxQj48vDpZ1vUXGpuSszfIc1bbHYboOPDbAuN4Lawg_RbNk17RZaKxZ3YwtCt3okYymYDCRhi1vKcGwxyZD7BEnJ3bjZTocbYIs0Q-71WSfSkG8LeH5hN_Tg696pdJjxGcyZScrlqL_Hdmc_rJvjYfrMtLEraLYlmNkQFgCTJRVQtAJqEK4lh0ZPKrhjb32nRKTHnI-_Vb1tC0OyuLRWwZgZMfKZG1g2LWrdA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2M4NzBlNGM5NDI4ZWVmMGUwMzhkMjgiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDE5MDEsImV4cCI6MTc1MTA0OTEwMSwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.jEBYVYlP3oGu56W8zBQtyAPsto0XJHGBrPmMxg_NCafuR5JeRxYYaU1gAnAVRDpYmxn3Agt0SVYa0OsyFgmnDT4Md4OQ1XtSJIHhzwXVgNUVHdvcUNETz0cy0O54ClxfI3taUPpcCYldkEYLDdihbIoeOYz1wPKUtKPOQJdehhs2cjgBoBKlRbYckYDWqtq1c-dQ_1XadfPjTgWBO25WGQaCilJ95OW19zsMwwWIHXbAvxUd-vIBdF-G6Ypg4aJSaDH8Woz0zr9g3O8Z-8drvQDVeSjoKG8BpXnMU4qKYExJcjgEYE0lY53nqGkRCSTAsDIEEE5AVIDxJsFeLm2JNg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"actors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies failed",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 403 - Forbidden\", function () {",
+											"    pm.response.to.have.status(403);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Sally\",\n    \"cast\": [7],\n    \"release_date\": \"01/01/2002\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"movies"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "\"Lord of the rings\"",
+											"disabled": true
+										},
+										{
+											"key": "release_date",
+											"value": "09.2010",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors failed",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 403 - Forbidden\", function () {",
+											"    pm.response.to.have.status(403);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Clint Eastwood\",\n    \"age\": 95,\n    \"gender\": \"male\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"actors"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2M4NzBlNGM5NDI4ZWVmMGUwMzhkMjgiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEzMDE5MzUsImV4cCI6MTc1MTMwOTEzNSwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.Ul8rcOpzUviAIRhWkCxK_CrBwu4a-O6ElsghTw7J4jFAmBB3XuxtwfYR5JlYBl739LBvTO3kNhgyz9KAEq0rOBxnHazRNDsooR6OlvxOKYH6CJt5G3Wb-z4FK_KRa1BILSkBg3jD0zHOv51IcjbTm7yiuHak3VypSjI5wOeTVJQmaRDDQ9HTlDRaAZ1t4IL_W-ikf5iOx4cb899afxVCcfqXD99qTNrgSCVAmR-3-oObPMkcPHbRssPMm3QvDF26WI9MSE5K5xDXgzoBWt980H8y1l3xcogFKiRyXqc5iKv5yGiIRfypXr6lylkIpK8iYjQseE-3qYYXeOELSJ76YA",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Requesting_as_Casting_Director",
+					"item": [
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Sally\",\n    \"cast\": [7],\n    \"release_date\": \"01/01/2002\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"movies"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "\"Lord of the rings\"",
+											"disabled": true
+										},
+										{
+											"key": "release_date",
+											"value": "09.2010",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Clint Eastwood\",\n    \"age\": 95,\n    \"gender\": \"male\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"actors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/70",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"name\": \"Robert de Niro\",\n    // \"age\": 29,\n    // \"gender\": \"female\",\n    \"movies\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/7",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"actors",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/1 failed",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"name\": \"Robert de Niro\",\n    // \"age\": 29,\n    // \"gender\": \"female\",\n    \"movies\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/7",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"actors",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/70",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Independence Day 2\",\n    \"cast\": [6, 7],\n    \"release_date\": \"01/01/2002\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/40",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"movies",
+										"40"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/1 failed",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Independence Day 2\",\n    \"cast\": [6, 7],\n    \"release_date\": \"01/01/2002\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/40",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"movies",
+										"40"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/70",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/4",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"actors",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/70 failed",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/4",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"actors",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/70",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/39",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"movies",
+										"39"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/70 failed",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/39",
+									"protocol": "https",
+									"host": [
+										"tinizacapstoneprj-ae0dab8adaa4",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"movies",
+										"39"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODJhZWY0MmM0ZDE0Y2YzY2U2YTY2MzIiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEzMDE3ODMsImV4cCI6MTc1MTMwODk4Mywic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.VmC8d2WrKUgkSsGT5Nj8yTz7XPR0SS5TOE24Xctcp9PGvAttST4469_Jv3T7hI0TecFw_IA1aKsN5XVjSDqGBaAk9E2tSASS5gaxh43niHz_dbXujVlJ1q3IWcH-A48arwBvpZG7mcyN4aMZ_i19GVpghdy1xx14bRax-1_Kp7xzSudQ3TGWsODqLu9v7GTbdr3m6ioRTlD70Vyyl0E_80__4SBX9HXZDUH3uNc2f_r0uuNJLSxqYRK1J6k9V62Tf9U2KaXISeauYuTvS-wguobQAf_0dMxoSVPP6irw-Hz0o9IAgIP5JzMCYLmmHTiertrnKEBg7g1VN3mApQWtJw",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
 					"name": "Request_Actors",
 					"request": {
 						"method": "GET",
@@ -21,310 +639,6 @@
 								"tinizacapstoneprj-ae0dab8adaa4",
 								"herokuapp",
 								"com"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDkyMTgsImV4cCI6MTc1MTA1NjQxOCwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.W9keFCCDfS36dOw1DGizps_8XD37wEHkTfE2-8rV7cG21sMhkXYEBZTjx8DkDB7ESlZvpH26MKw8YjbdgIjNkA0eNdLIQsXBDTNb6Z6ybPZmSiF_8qxQj48vDpZ1vUXGpuSszfIc1bbHYboOPDbAuN4Lawg_RbNk17RZaKxZ3YwtCt3okYymYDCRhi1vKcGwxyZD7BEnJ3bjZTocbYIs0Q-71WSfSkG8LeH5hN_Tg696pdJjxGcyZScrlqL_Hdmc_rJvjYfrMtLEraLYlmNkQFgCTJRVQtAJqEK4lh0ZPKrhjb32nRKTHnI-_Vb1tC0OyuLRWwZgZMfKZG1g2LWrdA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies",
-							"protocol": "https",
-							"host": [
-								"tinizacapstoneprj-ae0dab8adaa4",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"movies"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2M4NzBlNGM5NDI4ZWVmMGUwMzhkMjgiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDE5MDEsImV4cCI6MTc1MTA0OTEwMSwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.jEBYVYlP3oGu56W8zBQtyAPsto0XJHGBrPmMxg_NCafuR5JeRxYYaU1gAnAVRDpYmxn3Agt0SVYa0OsyFgmnDT4Md4OQ1XtSJIHhzwXVgNUVHdvcUNETz0cy0O54ClxfI3taUPpcCYldkEYLDdihbIoeOYz1wPKUtKPOQJdehhs2cjgBoBKlRbYckYDWqtq1c-dQ_1XadfPjTgWBO25WGQaCilJ95OW19zsMwwWIHXbAvxUd-vIBdF-G6Ypg4aJSaDH8Woz0zr9g3O8Z-8drvQDVeSjoKG8BpXnMU4qKYExJcjgEYE0lY53nqGkRCSTAsDIEEE5AVIDxJsFeLm2JNg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors",
-							"protocol": "https",
-							"host": [
-								"tinizacapstoneprj-ae0dab8adaa4",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"actors"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"title\": \"Sally\",\n    \"cast\": [7],\n    \"release_date\": \"01/01/2002\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies",
-							"protocol": "https",
-							"host": [
-								"tinizacapstoneprj-ae0dab8adaa4",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"movies"
-							],
-							"query": [
-								{
-									"key": "title",
-									"value": "\"Lord of the rings\"",
-									"disabled": true
-								},
-								{
-									"key": "release_date",
-									"value": "09.2010",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Clint Eastwood\",\n    \"age\": 95,\n    \"gender\": \"male\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors",
-							"protocol": "https",
-							"host": [
-								"tinizacapstoneprj-ae0dab8adaa4",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"actors"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/68",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    // \"name\": \"Robert de Niro\",\n    // \"age\": 29,\n    // \"gender\": \"female\",\n    \"movies\": []\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/7",
-							"protocol": "https",
-							"host": [
-								"tinizacapstoneprj-ae0dab8adaa4",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"actors",
-								"7"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/37",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"title\": \"Independence Day 2\",\n    \"cast\": [6, 7],\n    \"release_date\": \"01/01/2002\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/40",
-							"protocol": "https",
-							"host": [
-								"tinizacapstoneprj-ae0dab8adaa4",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"movies",
-								"40"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/37",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/4",
-							"protocol": "https",
-							"host": [
-								"tinizacapstoneprj-ae0dab8adaa4",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"actors",
-								"4"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/40",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZzSkhVTGN1ZW9xYTMxcWhuSTM0TyJ9.eyJpc3MiOiJodHRwczovL2Rldi1temNzbTFzcnBleXR3aTUxLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2ODVlZDNjNjdmNGIwZDUyNGQyMzJkZGEiLCJhdWQiOiJBZ2VuY3kiLCJpYXQiOjE3NTEwNDUxMDIsImV4cCI6MTc1MTA1MjMwMiwic2NvcGUiOiIiLCJhenAiOiI1TTYwc1dRcVBZT3dwb2RsNEx0blozMFVLSHRCaUhNNSIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvcnMiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6bW92aWVzIl19.XB3i36x_eprvcOErwu6KlRQxusEHlAJXvLpApvCHBnA9Jf8jgqavHVNaytQ5Y4BGIhbJHp4GXbCeH7G5CwLEM13qoOHEkkQifNeb2uT6shze8R3aar_N2WT0wFmyNE7k-6I_Kmr66JEomzos8hTOaNbL17uF3S2BZ6geS-TcAkgXbbyQMgB70uy3pDycW3u5DVU0Z3YT6fDA_7cPvD069vijpq8MErNd71VsbFXJYkr68LN5MiNI-VMKe3rC0pTdRFVhcDNwInf6iuBFFEQ5LK8Ej-3XmYCptqawOf0Itz-mtPMScKIE0S24cqHNT8NWFv-m0TgR8x0lWqv3c8q9zA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/39",
-							"protocol": "https",
-							"host": [
-								"tinizacapstoneprj-ae0dab8adaa4",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"movies",
-								"39"
 							]
 						}
 					},
