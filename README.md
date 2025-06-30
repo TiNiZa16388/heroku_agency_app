@@ -103,13 +103,35 @@ Body: {
 Response:
 
 {
-    "actor": {
-        "age": 95,
-        "gender": "male",
-        "id": 7,
-        "movies": [],
-        "name": "Clint Eastwood"
-    },
+    "actors": [
+        {
+            "age": 29,
+            "gender": "female",
+            "id": 2,
+            "movies": [],
+            "name": "Robert de Niro"
+        },
+        {
+            "age": 45,
+            "gender": "male",
+            "id": 5,
+            "movies": [
+                "Star Wars 1",
+                "Star Wars 2"
+            ],
+            "name": "Elijah Wood"
+        },
+        {
+            "age": 95,
+            "gender": "female",
+            "id": 6,
+            "movies": [
+                "Star Wars 1",
+                "Star Wars 2"
+            ],
+            "name": "Audrey Hepburn"
+        }
+    ],
     "success": true
 }
 
@@ -147,16 +169,25 @@ Body:
 Response:
 
 {
-    "actor": {
-        "age": 29,
-        "gender": "female",
-        "id": 7,
-        "movies": [
-            "Sally",
-            "Independence Day"
-        ],
-        "name": "Clint Eastwood"
-    },
+    "actors": [
+        {
+            "age": 29,
+            "gender": "female",
+            "id": 2,
+            "movies": [],
+            "name": "Robert de Niro"
+        },
+        {
+            "age": 45,
+            "gender": "male",
+            "id": 5,
+            "movies": [
+                "Star Wars 1",
+                "Star Wars 2"
+            ],
+            "name": "Elijah Wood"
+        }
+    ],
     "success": true
 }
 
@@ -295,15 +326,26 @@ Body:
 Response: 
 
 {
-    "movie": {
-        "actors": [
-            "Audrey Hepburn",
-            "Clint Eastwood"
-        ],
-        "id": 41,
-        "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
-        "title": "Independence Day"
-    },
+    "movies": [
+        {
+            "actors": [],
+            "id": 2,
+            "release_date": "Mon, 01 Jan 2024 00:00:00 GMT",
+            "title": "The fast and furious"
+        },
+        {
+            "actors": [],
+            "id": 5,
+            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
+            "title": "The Lord of the Rings"
+        },
+        {
+            "actors": [],
+            "id": 6,
+            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
+            "title": "The Lord of the Rings"
+        }
+    ]
     "success": true
 }
 
@@ -340,12 +382,35 @@ Body:
 Response:
 
 {
-    "movie": {
-        "actors": [],
-        "id": 40,
-        "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
-        "title": "Independence Day 2"
-    },
+    "movies": [
+        {
+            "actors": [],
+            "id": 2,
+            "release_date": "Mon, 01 Jan 2024 00:00:00 GMT",
+            "title": "The fast and furious"
+        },
+        {
+            "actors": [],
+            "id": 5,
+            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
+            "title": "The Lord of the Rings"
+        },
+        {
+            "actors": [],
+            "id": 6,
+            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
+            "title": "The Lord of the Rings"
+        },
+        {
+            "actors": [
+                "Elijah Wood",
+                "Audrey Hepburn"
+            ],
+            "id": 7,
+            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
+            "title": "Star Wars 1"
+        }
+    ],
     "success": true
 }
 
