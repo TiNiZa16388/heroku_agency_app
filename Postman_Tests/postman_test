@@ -189,7 +189,7 @@
 					"response": []
 				},
 				{
-					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/7",
+					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/68",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -229,7 +229,7 @@
 					"response": []
 				},
 				{
-					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/3",
+					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/movies/37",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -269,7 +269,7 @@
 					"response": []
 				},
 				{
-					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/3",
+					"name": "https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors/37",
 					"request": {
 						"auth": {
 							"type": "bearer",
