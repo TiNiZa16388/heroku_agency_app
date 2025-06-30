@@ -280,7 +280,7 @@ def create_app(test_config=None):
 
             movie.update()
 
-            movies = Movie.query.order_by(Actor.id).all()
+            movies = Movie.query.order_by(Movie.id).all()
 
             if len(movies) == 0:
                 abort(422)
