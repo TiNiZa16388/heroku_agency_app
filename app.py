@@ -144,6 +144,9 @@ def create_app(test_config=None):
 
             movies = Movie.query.order_by(Movie.id).all()
 
+            if len(movies) == 0:
+                abort(422)
+
             movies_formatted = [movie.format() for movie in movies]
 
             return  jsonify(
@@ -186,6 +189,9 @@ def create_app(test_config=None):
             actor.insert()
 
             actors = Actor.query.order_by(Actor.id).all()
+
+            if len(actors) == 0:
+                abort(422)
 
             actors_formatted = [actor.format() for actor in actors]
 
@@ -236,6 +242,9 @@ def create_app(test_config=None):
 
             actors = Actor.query.order_by(Actor.id).all()
 
+            if len(actors) == 0:
+                abort(422)
+
             actors_formatted = [actor.format() for actor in actors]
 
             return jsonify(
@@ -269,13 +278,13 @@ def create_app(test_config=None):
             if "release_date" in body:    
                 movie.release_date = body["release_date"]
 
-            if "actors" in body:
+            if "cast" in body:
                 # erase everything in the first place
                 movie.actors = []
                 movie.update()
 
                  # then append all newly configured references
-                actor_ids = body["actors"]
+                actor_ids = body["cast"]
                 add_actors_to_cast(actor_ids=actor_ids, movie=movie)
 
             movie.update()
