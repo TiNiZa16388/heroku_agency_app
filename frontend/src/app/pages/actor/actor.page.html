@@ -7,13 +7,27 @@
 <ion-content *ngIf="agency && agency.actors">
 <div style="display: flex; justify-content: center; padding-top: 20px; flex-flow: row wrap;">
     <ion-card
-     style="flex-flow: row wrap; align-items: center; display: flex; flex-direction: column; cursor: pointer;  width: 150px; height: 150px;" 
+     style="flex-flow: row wrap; align-items: left; display: flex; flex-direction: column; cursor: pointer;  width: 200px; height: 300px;" 
      *ngFor="let idx of Object.keys(agency.actors)"
      (click)="openForm(agency.actors[idx])">
         <ion-card-header>
           <ion-card-title>{{agency.actors[idx].name}}</ion-card-title>
         </ion-card-header>
-      </ion-card>
+        <ion-card-content>
+          <ion-list>
+            <p>Gender: {{agency.actors[idx].gender}}</p>
+            <p>Age: {{agency.actors[idx].age}}</p>
+            <ion-list>
+            <h2><u>Movies:</u></h2>
+            <ul>
+              <li *ngFor="let idx2 of Object.keys(agency.actors[idx].movies)">
+                {{agency.actors[idx].movies[idx2]}}
+              </li>
+            </ul>
+            </ion-list>
+          </ion-list>
+        </ion-card-content>
+    </ion-card>
     <ion-card
      style="opacity: .7; align-items: center; display: flex; flex-direction: column; cursor: pointer;" 
      *ngIf="auth.can('post:actors')"
