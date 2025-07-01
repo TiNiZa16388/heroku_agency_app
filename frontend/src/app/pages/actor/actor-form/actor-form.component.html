@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="isNew">New Actor Creator</ion-title>
+    <ion-title *ngIf="!isNew">Actor Editor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="actor">
+
+    <form (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-label>Actor Name</ion-label>
+        <ion-input type="text" [(ngModel)]="actor.name" name="name" placeholder="Template Man"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Age</ion-label>
+        <ion-input type="number" [(ngModel)]="actor.age" name="age" placeholder="-1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-input type="text" [(ngModel)]="actor.gender" name="gender" placeholder="male"></ion-input>
+      </ion-item>
+
+      <ion-item *ngFor="let movie of actor.movies; let i = index;  trackBy: customTrackBy">
+        <ion-label>{{"Movie Title " + i}}</ion-label>
+        <ion-label>{{actor.movies[i]}}</ion-label> 
+        <ion-button (click)="removeMovie(i)">Remove</ion-button><br />
+      </ion-item>
+
+      <ion-button 
+        [disabled]="!auth.can('delete:actors')"
+        (click)="deleteClicked()">Delete</ion-button><br />
+      <ion-button (click)="closeModal()">Cancel</ion-button>
+      <ion-button 
+        [disabled]="!auth.can('patch:actors') || !auth.can('post:actors')"
+        (click)="saveClicked()">Save</ion-button>
+
+    </form>
+</ion-content>

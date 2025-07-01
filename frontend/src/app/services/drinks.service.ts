@@ -65,7 +65,7 @@ export class AgencyService {
 
   saveActor(actor: Actor) {
     if (actor.id >= 0){
-      this.http.patch(this.url + '/actors/' + actor.id, DrinksService, this.getHeaders())
+      this.http.patch(this.url + '/actors/' + actor.id, this.getHeaders())
       .subscribe( (res: any) => {
         if (res.success) {
           this.fillActors(res.actors)

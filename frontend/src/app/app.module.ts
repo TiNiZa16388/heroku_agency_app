@@ -9,7 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { DrinksService } from './services/drinks.service';
+import { AgencyService } from './services/agency.service';
 import { AuthService } from './services/auth.service';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -29,7 +29,7 @@ import { from } from 'rxjs';
     StatusBar,
     SplashScreen,
     AuthService,
-    DrinksService,
+    AgencyService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

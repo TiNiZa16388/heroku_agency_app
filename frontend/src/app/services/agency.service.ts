@@ -17,7 +17,7 @@ export interface Actor {
   id:number;
   name: string;
   gender: string;
-  ag: number;
+  age: number;
   movies: Array<{
     title: string
   }>
@@ -55,10 +55,12 @@ export class AgencyService {
 
   saveActor(actor: Actor) {
     if (actor.id >= 0){
-      this.http.patch(this.url + '/actors/' + actor.id, this.getHeaders())
+      this.http.patch(this.url + '/actors/' + actor.id, actor, this.getHeaders())
       .subscribe( (res: any) => {
         if (res.success) {
           this.fillActors(res.actors)
+        }else{
+          console.log(res)
         }
       });
     } else {
