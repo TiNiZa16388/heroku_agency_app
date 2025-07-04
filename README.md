@@ -445,3 +445,11 @@ Response:
     },
     "success": true
 }
+
+### Personal note..
+
+Backend start:
+
+export DATABASE_URL="postgresql://tim:drawer16388@localhost:5432/agency"
+
+python3 app.y

@@ -23,10 +23,22 @@
         <ion-input type="text" [(ngModel)]="actor.gender" name="gender" placeholder="male"></ion-input>
       </ion-item>
 
+       
       <ion-item *ngFor="let movie of actor.movies; let i = index;  trackBy: customTrackBy">
-        <ion-label>{{"Movie " + i + ":"}}</ion-label>
-        <ion-input [(ngModel)]="actor.movies[i]" [name]="'Movie ' + i"></ion-input> 
+        <ion-label> {{"Movie " + i + ": "}} </ion-label>
+        <ion-item style="align-items: center; width: 60%"> 
+          <ion-select [(ngModel)]="actor.movies[i].id" name="actor.movies[i].title" 
+          placeholder="Select Movie" value="actor.movies[i].id">
+            <ion-select-option *ngFor="let key of getKeys(agencyService.movies)" 
+                [value]="agencyService.movies[key].id" 
+                [selected]='actor.movies[i].id == agencyService.movies[key].id'>
+              {{agencyService.movies[key].title}} </ion-select-option>
+          </ion-select>
+        </ion-item>
         <ion-button (click)="removeMovie(i)">Remove</ion-button><br />
+      </ion-item>
+      <ion-item >
+        <ion-button (click)="addMovie()">ADD</ion-button><br />   
       </ion-item>
 
       <ion-button 

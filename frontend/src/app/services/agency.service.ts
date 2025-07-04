@@ -8,9 +8,7 @@ export interface Movie {
   id: number;
   title: string;
   release_date: Date;
-  actors: Array<{
-    name: string
-  }>
+  actors: Array<Actor>
 }
 
 export interface Actor {
@@ -18,9 +16,7 @@ export interface Actor {
   name: string;
   gender: string;
   age: number;
-  movies: Array<{
-    title: string
-  }>
+  movies: Array<Movie>
 }
 
 @Injectable({
@@ -33,7 +29,9 @@ export class AgencyService {
   public movies: {[key: number]: Movie} = {};
   public actors : {[key: number]: Actor} = {};
 
-  constructor(private auth: AuthService, private http: HttpClient) { }
+  constructor(private auth: AuthService, private http: HttpClient) {
+
+   }
 
   getHeaders() {
     const header = {
@@ -87,8 +85,10 @@ export class AgencyService {
       .subscribe((res: any) => {
         this.fillMovies(res.movies)
         console.log(res)
+        return this.movies;
       })
     }
+    return null;
   }
 
   saveMovie(movie: Movie) {

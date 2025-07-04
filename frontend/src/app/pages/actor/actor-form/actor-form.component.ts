@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Actor, AgencyService } from 'src/app/services/agency.service';
+import { Actor, Movie, AgencyService } from 'src/app/services/agency.service';
 import { ModalController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -12,11 +12,14 @@ export class ActorFormComponent implements OnInit {
   @Input() actor: Actor;
   @Input() isNew: boolean;
 
+  private movies: {[key: number]: Movie} = {};
+  private newMovie: Movie;
+
   constructor(
     public auth: AuthService,
     private modalCtrl: ModalController,
     private agencyService: AgencyService
-    ) { }
+    ){}
 
   ngOnInit() {
     if (this.isNew) {
@@ -27,8 +30,9 @@ export class ActorFormComponent implements OnInit {
         name: '',
         movies: []
       };
-      this.addMovie();
+      //this.addMovie();
     }
+    this.agencyService.getMovies();
   }
 
   customTrackBy(index: number, obj: any): any {
@@ -36,7 +40,15 @@ export class ActorFormComponent implements OnInit {
   }
 
   addMovie(i: number = 0) {
-    this.actor.movies.splice(i + 1, 0, {title: ''});
+    this.agencyService.getMovies();
+    this.actor.movies.splice(this.actor.movies.length + 1, 0, 
+      {
+        id: 0,
+        title: '',
+        release_date: new Date(),
+        actors: []
+      });
+
   }
 
   removeMovie(i: number) {
@@ -56,4 +68,9 @@ export class ActorFormComponent implements OnInit {
     this.agencyService.deleteActor(this.actor);
     this.closeModal();
   }
+
+  getKeys(dictionary: { [key: number]: Movie }): string[] {
+    return Object.keys(dictionary);
+  }
+
 }

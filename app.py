@@ -129,7 +129,7 @@ def create_app(test_config=None):
         try:
             new_title = body.get('title', None)
             new_release_date = body.get('release_date', None)
-            actor_ids = body.get('cast', None)
+            cast = body.get('cast', None)
 
             if new_title is None or new_release_date is None:
                 abort(422)
@@ -137,8 +137,8 @@ def create_app(test_config=None):
             movie = Movie(title=new_title,
                           release_date=new_release_date)
 
-            if actor_ids is not None:
-                add_actors_to_cast(actor_ids=actor_ids, movie=movie)
+            if cast is not None:
+                add_actors_to_cast(actors=cast, movie=movie)
 
             movie.insert()
 
@@ -168,11 +168,13 @@ def create_app(test_config=None):
 
         body = request.get_json()
 
+        print
+
         try:
             new_name = body.get('name', None)
             new_age = body.get('age', None)
             new_gender = body.get('gender', None)
-            movie_ids = body.get('movies', None)
+            movies = body.get('movies', None)
 
             if new_name is None or \
                 new_age is None or \
@@ -183,8 +185,8 @@ def create_app(test_config=None):
                           age=new_age,
                           gender=new_gender)
             
-            if movie_ids is not None:
-                add_movies_of_actor(movie_ids=movie_ids, actor=actor)
+            if movies is not None:
+                add_movies_to_actor(movies=movies, actor=actor)
 
             actor.insert()
 
@@ -235,8 +237,8 @@ def create_app(test_config=None):
                 actor.update()
 
                 # then append all newly configured references
-                movie_ids = body["movies"]
-                add_movies_of_actor(movie_ids=movie_ids, actor=actor)
+                movies = body["movies"]
+                add_movies_to_actor(movies=movies, actor=actor)
             
             actor.update()
 
@@ -284,8 +286,8 @@ def create_app(test_config=None):
                 movie.update()
 
                  # then append all newly configured references
-                actor_ids = body["cast"]
-                add_actors_to_cast(actor_ids=actor_ids, movie=movie)
+                actors = body["cast"]
+                add_actors_to_cast(actors=actors, movie=movie)
 
             movie.update()
 
@@ -346,27 +348,28 @@ def create_app(test_config=None):
 
     # define function for adding actors to the cast
     # by providing the actor names 
-    def add_actors_to_cast(actor_ids, movie):
-        for actor_id in actor_ids:
-            actor = Actor.query.\
-                filter(Actor.id == actor_id).\
+    def add_actors_to_cast(actors, movie):
+        for actor in actors:
+            found_actor = Actor.query.\
+                filter(Actor.id == actor['id']).\
                 one_or_none()
-            if actor is not None\
-                and actor not in movie.actors:
-                movie.actors.append(actor)  
+            movie_actor_ids = [element.id for element in movie.actors]
+            if found_actor is not None\
+                and found_actor.id not in movie_actor_ids:
+                movie.actors.append(found_actor)  
 
 
-    # define function for adding mvoies to the actor
-    # by providing the title 
-    def add_movies_of_actor(movie_ids, actor):
-        print(movie_ids)
-        for movie_id in movie_ids:
-            movie = Movie.query.\
-                filter(Movie.id == movie_id).\
+    # define function for adding movies to the actor
+    def add_movies_to_actor(movies, actor):
+
+        for movie in movies:
+            found_movie = Movie.query.\
+                filter(Movie.id == movie['id']).\
                 one_or_none()
-            if movie is not None\
-                and movie not in actor.movies:
-                    actor.movies.append(movie)  
+            actor_movie_ids = [mv.id for mv in actor.movies]
+            if found_movie is not None\
+                and found_movie.id not in actor_movie_ids:
+                    actor.movies.append(found_movie)  
 
     @app.route('/headers')
     @requires_auth

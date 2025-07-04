@@ -7,7 +7,7 @@
 <ion-content *ngIf="agency && agency.actors">
 <div style="display: flex; justify-content: center; padding-top: 20px; flex-flow: row wrap;">
     <ion-card
-     style="flex-flow: row wrap; align-items: left; display: flex; flex-direction: column; cursor: pointer;  width: 200px; height: 300px;" 
+     style="flex-flow: row wrap; align-items: left; display: flex; flex-direction: column; cursor: pointer;  min-width: 200px; min-height: 300px;" 
      *ngFor="let idx of Object.keys(agency.actors)"
      (click)="openForm(agency.actors[idx])">
         <ion-card-header>

@@ -27,7 +27,7 @@ export class ActorPage implements OnInit {
 
     const modal = await this.modalCtrl.create({
       component: ActorFormComponent,
-      componentProps: { actor: activeActor, isNew: !activeActor }
+      componentProps: { actor: activeActor, isNew: !activeActor , AgencyService: this.agency}
     });
 
     modal.present();
