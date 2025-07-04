@@ -1,27 +1,28 @@
 <ion-header>
   <ion-toolbar style="text-align: center">
-    <ion-title><b>Actor List</b></ion-title>
+    <ion-title><b>Movie List</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="agency && agency.actors">
+<ion-content *ngIf="agency && agency.movies">
 <div style="display: flex; justify-content: center; padding-top: 20px; flex-flow: row wrap;">
     <ion-card
      style="flex-flow: row wrap; align-items: left; display: flex; flex-direction: column; cursor: pointer;  min-width: 200px; min-height: 300px;" 
-     *ngFor="let idx of Object.keys(agency.actors)"
-     (click)="openForm(agency.actors[idx])">
+     *ngFor="let idx of Object.keys(agency.movies)"
+     (click)="openForm(agency.movies[idx])">
         <ion-card-header>
-          <ion-card-title>{{idx}} {{agency.actors[idx].name}}</ion-card-title>
+          <ion-card-title>{{idx}} {{agency.movies[idx].title}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
           <ion-list>
-            <p>Gender: {{agency.actors[idx].gender}}</p>
-            <p>Age: {{agency.actors[idx].age}}</p>
+            <p>Release: {{agency.movies[idx].release_date}}</p>
             <ion-list>
-            <h2><u>Movies:</u></h2>
+            <h2><u>Actors:</u></h2>
             <ul>
-              <li *ngFor="let idx2 of Object.keys(agency.actors[idx].movies)">
-                {{idx}} {{idx2}} {{agency.actors[idx].movies[idx2]}}
+              <!-- <li *ngFor="let idx2 of Object.keys(agency.movies[idx].actors)">
+                {{idx}} {{idx2}} {{agency.movies[idx].actors[idx2]}} -->
+              <li *ngFor="let actor of agency.movies[idx].actors">
+                {{idx}} {{actor.id}} {{actor.title}}
               </li>
             </ul>
             </ion-list>
@@ -30,10 +31,10 @@
     </ion-card>
     <ion-card
      style="opacity: .7; align-items: center; display: flex; flex-direction: column; cursor: pointer;" 
-     *ngIf="auth.can('post:actors')"
+     *ngIf="auth.can('post:movies')"
      (click)="openForm()">
         <ion-card-header>
-          <ion-card-title>Add Actor</ion-card-title>
+          <ion-card-title>Add Movie</ion-card-title>
         </ion-card-header>
       
         <ion-card-content style="color:grey; font-size: 256%;">

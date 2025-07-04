@@ -27,7 +27,7 @@ export class AgencyService {
   url = environment.apiServerUrl;
 
   public movies: {[key: number]: Movie} = {};
-  public actors : {[key: number]: Actor} = {};
+  public actors: {[key: number]: Actor} = {};
 
   constructor(private auth: AuthService, private http: HttpClient) {
 
@@ -93,14 +93,14 @@ export class AgencyService {
 
   saveMovie(movie: Movie) {
     if (movie.id >= 0){
-      this.http.patch(this.url + '/movies/' + movie.id, this.getHeaders())
+      this.http.patch(this.url + '/movies/' + movie.id, movie, this.getHeaders())
       .subscribe( (res: any) => {
         if (res.success) {
           this.fillMovies(res.movies)
         }
       });
     } else {
-      this.http.post(this.url + '/movie/', movie.id, this.getHeaders())
+      this.http.post(this.url + '/movies/', movie, this.getHeaders())
       .subscribe( (res: any) => {
         if (res.success) {
           this.fillMovies(res.movies);

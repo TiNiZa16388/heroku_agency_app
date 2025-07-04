@@ -8,6 +8,7 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       { path: 'actor', loadChildren: '../actor/actor.module#ActorPageModule' },
+      { path: 'movie', loadChildren: '../movie/movie.module#MoviePageModule' },
       { path: 'user-page', loadChildren: '../user-page/user-page.module#UserPagePageModule' }, 
       {
         path: '',

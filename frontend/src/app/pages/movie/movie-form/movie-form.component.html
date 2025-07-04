@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="isNew">New Movie Creator</ion-title>
+    <ion-title *ngIf="!isNew">Movie Editor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="movie">
+
+    <form (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-label>Movie Name</ion-label>
+        <ion-input type="text" [(ngModel)]="movie.title" name="title" placeholder="Template Man"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Release Date: </ion-label>
+        <ion-input type="number" [(ngModel)]="movie.release_date" name="release date" placeholder="-1"></ion-input>
+      </ion-item>
+
+       
+      <ion-item *ngFor="let actor of movie.actors; let i = index;  trackBy: customTrackBy">
+        <ion-label> {{"Actor " + i + ": "}} </ion-label>
+        <ion-item style="align-items: center; width: 60%"> 
+          <ion-select [(ngModel)]="movie.actors[i].id" name="movie.actors[i].title" 
+          placeholder="Select Actor" value="movie.actors[i].id">
+            <ion-select-option *ngFor="let key of getKeys(agencyService.actors)" 
+                [value]="agencyService.actors[key].id" 
+                [selected]='movie.actors[i].id == agencyService.actors[key].id'>
+              {{agencyService.actors[key].name}} </ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-button (click)="removeActor(i)">Remove</ion-button><br />
+      </ion-item>
+      <ion-item >
+        <ion-button (click)="addActor()">ADD</ion-button><br />   
+      </ion-item>
+
+      <ion-button 
+        [disabled]="!auth.can('delete:movies')"
+        (click)="deleteClicked()">Delete</ion-button><br />
+      <ion-button (click)="closeModal()">Cancel</ion-button>
+      <ion-button 
+        [disabled]="!auth.can('patch:movies') || !auth.can('post:movies')"
+        (click)="saveClicked()">Save</ion-button>
+
+    </form>
+</ion-content>
