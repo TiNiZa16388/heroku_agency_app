@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiServerUrl: 'http://127.0.0.1:5000', // the running FLASK api server url
+  apiServerUrl: 'https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com', // the running FLASK api server url
   auth0: {
     url: 'dev-mzcsm1srpeytwi51.eu', // the auth0 domain prefix
     audience: 'Agency', // the audience set for the auth0 app

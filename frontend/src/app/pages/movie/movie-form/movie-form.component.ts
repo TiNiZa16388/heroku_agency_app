@@ -52,6 +52,8 @@ export class MovieFormComponent implements OnInit {
 
   removeActor(i: number) {
     this.movie.actors.splice(i, 1);
+    this.agencyService.getMovies();
+    this.agencyService.getActors();
   }
 
   closeModal() {
