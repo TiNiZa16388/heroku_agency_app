@@ -30,46 +30,33 @@ with Bearer Token
 Response:
 
 {
-    "actors": [
+    "actors":[
         {
-            "age": 29,
-            "gender": "female",
-            "id": 2,
-            "movies": [],
-            "name": "Robert de Niro"
-        },
-        {
-            "age": 45,
-            "gender": "male",
-            "id": 5,
-            "movies": [
-                "Star Wars 1",
-                "Star Wars 2"
+            "age":29,
+            "gender":
+            "female",
+            "id":2,
+            "movies":[
+                {
+                    "actors":[],
+                    "id":2,
+                    "release_date":
+                    "Mon, 01 Jan 2024 00:00:00 GMT",
+                    "title":"The fast and furious"
+                },
+                {
+                    "actors":[],
+                    "id":6,
+                    "release_date":"Tue, 01 Jan 2002 00:00:00 GMT",
+                    "title":"The Lord of the Rings"
+                }
             ],
-            "name": "Elijah Wood"
-        },
-        {
-            "age": 95,
-            "gender": "female",
-            "id": 6,
-            "movies": [
-                "Star Wars 1",
-                "Star Wars 2"
-            ],
-            "name": "Audrey Hepburn"
-        },
-        {
-            "age": 95,
-            "gender": "male",
-            "id": 7,
-            "movies": [
-                "Sally"
-            ],
-            "name": "Clint Eastwood"
-        }
-    ],
-    "success": true
+            "name":"Clint Eastwood"
+            }
+        ]
+,"success":true
 }
+
 
 ### Endpoints
 #### POST /actors
@@ -93,47 +80,100 @@ POST https://tinizacapstoneprj-ae0dab8adaa4.herokuapp.com/actors
 
 Authorization: Bearer Token
 
-Body: {
-    "name": "Clint Eastwood",
-    "age": 95,
-    "gender": "male",
-    "movies": []
+Body: 
+{
+    "id":-1,
+    "gender":"male",
+    "age":50,
+    "name":"Daniel Craig",
+    "movies":[
+        {   
+            "actors":[
+                    {
+                        "age":29,
+                        "gender":"female",
+                        "id":2,"movies":[],
+                        "name":"Robert de Niro"
+                    }
+                ],
+            "id":2,
+            "release_date":"Mon, 01 Jan 2024 00:00:00 GMT",
+            "title":"The fast and furious"
+        },{
+            "actors":[
+                {
+                    "age":29,
+                    "gender":"female",
+                    "id":2,"movies":[],
+                    "name":"Robert de Niro"
+                },{
+                    "age":29,
+                    "gender":"female",
+                    "id":7,
+                    "movies":[],
+                    "name":"Clint Eastwood"
+                },{
+                    "age":95,
+                    "gender":"female",
+                    "id":6,
+                    "movies":[],
+                    "name":"Audrey Hepburn"
+                }
+            ],
+            "id":6,
+            "release_date":"Tue, 01 Jan 2002 00:00:00 GMT",
+            "title":"The Lord of the Rings"
+        }
+    ]
 }
 
 Response:
 
 {
-    "actors": [
+    "actors":[
         {
-            "age": 29,
-            "gender": "female",
-            "id": 2,
-            "movies": [],
-            "name": "Robert de Niro"
-        },
-        {
-            "age": 45,
-            "gender": "male",
-            "id": 5,
-            "movies": [
-                "Star Wars 1",
-                "Star Wars 2"
+            "age":29,
+            "gender":"female",
+            "id":2,
+            "movies":[
+                {
+                    "actors":[],
+                    "id":2,
+                    "release_date":"Mon, 01 Jan 2024 00:00:00 GMT",
+                    "title":"The fast and furious"
+                },{
+                    "actors":[],
+                    "id":6,"release_date":"Tue, 01 Jan 2002 00:00:00 GMT",
+                    "title":"The Lord of the Rings"},
+                {
+                    "actors":[],
+                    "id":7,"release_date":"Tue, 01 Jan 2002 00:00:00 GMT",
+                    "title":"Star Wars 1"
+                }
             ],
-            "name": "Elijah Wood"
-        },
-        {
-            "age": 95,
-            "gender": "female",
-            "id": 6,
-            "movies": [
-                "Star Wars 1",
-                "Star Wars 2"
+            "name":"Robert de Niro"
+        },{
+            "age":95,
+            "gender":"female",
+            "id":6,
+            "movies":[
+                {
+                    "actors":[],
+                    "id":7,"release_date":"Tue, 01 Jan 2002 00:00:00 GMT",
+                    "title":"Star Wars 1"
+                },{
+                    "actors":[],
+                    "id":6,
+                    "release_date":"Tue, 01 Jan 2002 00:00:00 GMT",
+                    "title":"The Lord of the Rings"#
+                }
             ],
-            "name": "Audrey Hepburn"
+            "name":"Audrey Hepburn"
         }
     ],
-    "success": true
+    "success":true
 }
+
 
 ### Endpoints
 #### PATCH /actors
@@ -159,37 +199,11 @@ Authoriation: Bearer Token
 
 Body: 
 
-{
-    "name": "Clint Eastwood",
-    "age": 29,
-    "gender": "female",
-    "movies": [9, 39]
-}
+{"age":29,"gender":"female","id":2,"movies":[{"actors":[{"age":29,"gender":"female","id":2,"movies":[],"name":"Robert de Niro"},{"age":50,"gender":"male","id":101,"movies":[],"name":"Daniel Craig"}],"id":2,"release_date":"Mon, 01 Jan 2024 00:00:00 GMT","title":"The fast and furious"},{"actors":[{"age":29,"gender":"female","id":2,"movies":[],"name":"Robert de Niro"},{"age":29,"gender":"female","id":7,"movies":[],"name":"Clint Eastwood"},{"age":95,"gender":"female","id":6,"movies":[],"name":"Audrey Hepburn"},{"age":50,"gender":"male","id":101,"movies":[],"name":"Daniel Craig"}],"id":6,"release_date":"Tue, 01 Jan 2002 00:00:00 GMT","title":"The Lord of the Rings"}],"name":"Robert de Niro"}
 
 Response:
 
-{
-    "actors": [
-        {
-            "age": 29,
-            "gender": "female",
-            "id": 2,
-            "movies": [],
-            "name": "Robert de Niro"
-        },
-        {
-            "age": 45,
-            "gender": "male",
-            "id": 5,
-            "movies": [
-                "Star Wars 1",
-                "Star Wars 2"
-            ],
-            "name": "Elijah Wood"
-        }
-    ],
-    "success": true
-}
+{"age":29,"gender":"female","id":2,"movies":[{"actors":[{"age":29,"gender":"female","id":2,"movies":[],"name":"Robert de Niro"},{"age":50,"gender":"male","id":101,"movies":[],"name":"Daniel Craig"}],"id":2,"release_date":"Mon, 01 Jan 2024 00:00:00 GMT","title":"The fast and furious"},{"actors":[{"age":29,"gender":"female","id":2,"movies":[],"name":"Robert de Niro"},{"age":29,"gender":"female","id":7,"movies":[],"name":"Clint Eastwood"},{"age":95,"gender":"female","id":6,"movies":[],"name":"Audrey Hepburn"},{"age":50,"gender":"male","id":101,"movies":[],"name":"Daniel Craig"}],"id":6,"release_date":"Tue, 01 Jan 2002 00:00:00 GMT","title":"The Lord of the Rings"}],"name":"Robert de Niro"}
 
 ### Endpoints
 #### DELETE /actors
@@ -245,55 +259,8 @@ with Bearer Token
 
 Response:
 
-{
-    "movies": [
-        {
-            "actors": [],
-            "id": 2,
-            "release_date": "Mon, 01 Jan 2024 00:00:00 GMT",
-            "title": "The fast and furious"
-        },
-        {
-            "actors": [],
-            "id": 5,
-            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
-            "title": "The Lord of the Rings"
-        },
-        {
-            "actors": [],
-            "id": 6,
-            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
-            "title": "The Lord of the Rings"
-        },
-        {
-            "actors": [
-                "Elijah Wood",
-                "Audrey Hepburn"
-            ],
-            "id": 7,
-            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
-            "title": "Star Wars 1"
-        },
-        {
-            "actors": [
-                "Elijah Wood",
-                "Audrey Hepburn"
-            ],
-            "id": 8,
-            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
-            "title": "Star Wars 2"
-        },
-        {
-            "actors": [
-                "Clint Eastwood"
-            ],
-            "id": 9,
-            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
-            "title": "Sally"
-        }
-    ],
-    "success": true
-}
+{"movies":[{"actors":[{"age":29,"gender":"female","id":2,"movies":[],"name":"Robert de Niro"},{"age":50,"gender":"male","id":101,"movies":[],"name":"Daniel Craig"}],"id":2,"release_date":"Mon, 01 Jan 2024 00:00:00 GMT","title":"The fast and furious"},{"actors":[{"age":29,"gender":"female","id":2,"movies":[],"name":"Robert de Niro"},{"age":29,"gender":"female","id":7,"movies":[],"name":"Clint Eastwood"},{"age":95,"gender":"female","id":6,"movies":[],"name":"Audrey Hepburn"},{"age":50,"gender":"male","id":101,"movies":[],"name":"Daniel Craig"}],"id":6,"release_date":"Tue, 01 Jan 2002 00:00:00 GMT","title":"The Lord of the Rings"},{"actors":[{"age":29,"gender":"female","id":2,"movies":[],"name":"Robert de Niro"},{"age":29,"gender":"female","id":7,"movies":[],"name":"Clint Eastwood"},{"age":95,"gender":"female","id":6,"movies":[],"name":"Audrey Hepburn"}],"id":7,"release_date":"Tue, 01 Jan 2002 00:00:00 GMT","title":"Star Wars 1"}],"success":true}
+
 
 ### Endpoints
 #### POST /movies
@@ -318,36 +285,16 @@ Authorization Bearer Token
 Body:
 
 {
-    "title": "Independence Day",
-    "cast": [6, 7],
-    "release_date": "01/01/2002"
+    "id":-1,
+    "title":"Independence Day",
+    "release_date":"2025-07-06T22:17:33.427Z",
+    "actors":[]
 }
 
 Response: 
 
-{
-    "movies": [
-        {
-            "actors": [],
-            "id": 2,
-            "release_date": "Mon, 01 Jan 2024 00:00:00 GMT",
-            "title": "The fast and furious"
-        },
-        {
-            "actors": [],
-            "id": 5,
-            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
-            "title": "The Lord of the Rings"
-        },
-        {
-            "actors": [],
-            "id": 6,
-            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
-            "title": "The Lord of the Rings"
-        }
-    ]
-    "success": true
-}
+{"movies":[{"actors":[{"age":50,"gender":"male","id":101,"movies":[],"name":"Daniel Craig"},{"age":29,"gender":"female","id":2,"movies":[],"name":"Robert de Niro"}],"id":2,"release_date":"Mon, 01 Jan 2024 00:00:00 GMT","title":"The fast and furious"},{"actors":[{"age":29,"gender":"female","id":7,"movies":[],"name":"Clint Eastwood"},{"age":95,"gender":"female","id":6,"movies":[],"name":"Audrey Hepburn"},{"age":50,"gender":"male","id":101,"movies":[],"name":"Daniel Craig"},{"age":29,"gender":"female","id":2,"movies":[],"name":"Robert de Niro"}],"id":6,"release_date":"Tue, 01 Jan 2002 00:00:00 GMT","title":"The Lord of the Rings"},{"actors":[{"age":29,"gender":"female","id":7,"movies":[],"name":"Clint Eastwood"},{"age":95,"gender":"female","id":6,"movies":[],"name":"Audrey Hepburn"}],"id":7,"release_date":"Tue, 01 Jan 2002 00:00:00 GMT","title":"Star Wars 1"},{"actors":[],"id":100,"release_date":"Sun, 06 Jul 2025 00:00:00 GMT","title":"Independence Day"}],"success":true}
+
 
 ### Endpoints
 #### PATCH /movies
@@ -373,46 +320,12 @@ Authoriation: Bearer Token
 
 Body: 
 
-{
-    "title": "Independence Day 2",
-    "cast": [6, 7],
-    "release_date": "01/01/2002"
-}
+{"actors":[],"id":100,"release_date":"Sun, 06 Jul 2025 00:00:00 GMT","title":"Independence Day"}
 
 Response:
 
-{
-    "movies": [
-        {
-            "actors": [],
-            "id": 2,
-            "release_date": "Mon, 01 Jan 2024 00:00:00 GMT",
-            "title": "The fast and furious"
-        },
-        {
-            "actors": [],
-            "id": 5,
-            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
-            "title": "The Lord of the Rings"
-        },
-        {
-            "actors": [],
-            "id": 6,
-            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
-            "title": "The Lord of the Rings"
-        },
-        {
-            "actors": [
-                "Elijah Wood",
-                "Audrey Hepburn"
-            ],
-            "id": 7,
-            "release_date": "Tue, 01 Jan 2002 00:00:00 GMT",
-            "title": "Star Wars 1"
-        }
-    ],
-    "success": true
-}
+{"movies":[{"actors":[{"age":50,"gender":"male","id":101,"movies":[],"name":"Daniel Craig"},{"age":29,"gender":"female","id":2,"movies":[],"name":"Robert de Niro"}],"id":2,"release_date":"Mon, 01 Jan 2024 00:00:00 GMT","title":"The fast and furious"},{"actors":[{"age":29,"gender":"female","id":7,"movies":[],"name":"Clint Eastwood"},{"age":95,"gender":"female","id":6,"movies":[],"name":"Audrey Hepburn"},{"age":50,"gender":"male","id":101,"movies":[],"name":"Daniel Craig"},{"age":29,"gender":"female","id":2,"movies":[],"name":"Robert de Niro"}],"id":6,"release_date":"Tue, 01 Jan 2002 00:00:00 GMT","title":"The Lord of the Rings"},{"actors":[{"age":29,"gender":"female","id":7,"movies":[],"name":"Clint Eastwood"},{"age":95,"gender":"female","id":6,"movies":[],"name":"Audrey Hepburn"}],"id":7,"release_date":"Tue, 01 Jan 2002 00:00:00 GMT","title":"Star Wars 1"},{"actors":[],"id":100,"release_date":"Sun, 06 Jul 2025 00:00:00 GMT","title":"Independence Day"}],"success":true}
+
 
 ### Endpoints
 #### DELETE /movies
