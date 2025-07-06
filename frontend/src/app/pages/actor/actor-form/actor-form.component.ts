@@ -36,37 +36,6 @@ export class ActorFormComponent implements OnInit {
     }
   }
 
-  refreshMovies(){
-
-    console.log("Refreshing actor movies buffer");
-    console.log("Length: " + JSON.stringify(this.actor.movies.length))
-    // Get all associated attributes of a movie
-    // title is also used in the form html
-    for(let i:number=0; i<this.actor.movies.length; i++){
-      console.log("Iterate: " + JSON.stringify(i))
-      console.log("this.actor.movies[i]: " + JSON.stringify(this.actor.movies[i]))
-      // Check if property id exists in element of array
-      if(this.actor.movies[i].hasOwnProperty("id")){
-        let key = this.actor.movies[i].id;
-        console.log("key:" + JSON.stringify(key))
-        // check if IDs are identical..
-        if(key != -1){
-          console.log("movie.id:" + JSON.stringify(this.actor.movies[i].id))
-          console.log("agencyService.movies[key].id: " + 
-            JSON.stringify(this.agencyService.movies[key].id))
-          if (key === this.agencyService.movies[key].id){
-            this.actor.movies[i]=this.agencyService.movies[key];
-            console.log("movie.id:" + this.actor.movies[i].id);
-            console.log("movie.release_date:" + this.actor.movies[i].release_date);
-            console.log("movie.title:" + this.actor.movies[i].title);
-          }
-        }
-      }else{
-          console.log("Buffer does not have elements with property id..");
-      }
-    }
-  }
-
   customTrackBy(index: number, obj: any): any {
     return index;
   }
@@ -111,10 +80,39 @@ export class ActorFormComponent implements OnInit {
     const target = event.target as HTMLIonSelectElement;
 
     console.log("Handle Change called!")
-    console.log("Target:" + JSON.stringify(target))
 
     this.refreshMovies();
+  }
 
+  refreshMovies(){
+
+    console.log("Refreshing actor movies buffer");
+    console.log("Length: " + JSON.stringify(this.actor.movies.length))
+    // Get all associated attributes of a movie
+    // title is also used in the form html
+    for(let i:number=0; i<this.actor.movies.length; i++){
+      console.log("Iterate: " + JSON.stringify(i))
+      console.log("this.actor.movies[i]: " + JSON.stringify(this.actor.movies[i]))
+      // Check if property id exists in element of array
+      if(this.actor.movies[i].hasOwnProperty("id")){
+        let key = this.actor.movies[i].id;
+        console.log("key:" + JSON.stringify(key))
+        // check if IDs are identical..
+        if(key != -1){
+          console.log("movie.id:" + JSON.stringify(this.actor.movies[i].id))
+          console.log("agencyService.movies[key].id: " + 
+            JSON.stringify(this.agencyService.movies[key].id))
+          if (key === this.agencyService.movies[key].id){
+            this.actor.movies[i]=this.agencyService.movies[key];
+            console.log("movie.id:" + this.actor.movies[i].id);
+            console.log("movie.release_date:" + this.actor.movies[i].release_date);
+            console.log("movie.title:" + this.actor.movies[i].title);
+          }
+        }
+      }else{
+          console.log("Buffer does not have elements with property id..");
+      }
+    }
   }
 
 }
