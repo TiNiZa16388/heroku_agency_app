@@ -85,12 +85,20 @@ class Movie(db.Model):
                            back_populates='movies')
 
   def format(self):
-    actor_names = [actor.name for actor in self.actors]
+    actors_formatted = []
+    for actor in self.actors:
+      actors_formatted.append({
+        'id': actor.id,
+        'name': actor.name,
+        'age': actor.age,
+        'gender': actor.gender,
+        'movies':[]
+      })
     return {
       'id': self.id,
       'title': self.title,
       'release_date': self.release_date,
-      'actors': actor_names}
+      'actors': actors_formatted}
 
 # adding Actors model
 '''
@@ -121,10 +129,16 @@ class Actor(db.Model):
     db.session.commit()
 
   def format(self):
-    movies_format = [movie.title for movie in self.movies]
+    movies_formatted = []
+    for movie in self.movies:
+      movies_formatted.append({
+        'title': movie.title,
+        'release_date': movie.release_date,
+        'id': movie.id,
+        'actors':[]})
     return {
       'id': self.id,
       'name': self.name,
       'age': self.age,
       'gender': self.gender,
-      'movies': movies_format}
+      'movies': movies_formatted}
