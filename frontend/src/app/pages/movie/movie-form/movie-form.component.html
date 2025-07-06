@@ -22,7 +22,7 @@
        
       <ion-item *ngFor="let actor of movie.actors; let i = index;  trackBy: customTrackBy">
         <ion-label > {{"Actor " + i + ": "}} </ion-label>
-        <ion-label style="align-items: right;"> {{actor}} </ion-label>
+        <ion-label style="align-items: right;"> {{actor.name}} </ion-label>
       </ion-item>
       <ion-button 
         [disabled]="!auth.can('delete:movies')"

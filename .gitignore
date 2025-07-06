@@ -1,0 +1,5 @@
+# Ignore environment
+myvenv
+
+# Ignore py cache
+__pycache__
