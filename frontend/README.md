@@ -1,5 +1,9 @@
 
-# Coffee Shop Frontend
+# Agency Data View
+
+## Background
+
+The project is taken over from an exercise within the udacity nano degree training. The frond-end is taken over from the COffee-Shop project. Therefore tool-environment, design and architecture are identical
 
 ## Getting Setup
 
@@ -68,12 +72,16 @@ ionic serve
 
 ## Key Software Design Relevant to Our Coursework
 
-The frontend framework is a bit beefy; here are the two areas to focus your study.
 
-### Authentication
+### Available Users
 
-The authentication system used for this project is Auth0. `./src/app/services/auth.service.ts` contains the logic to direct a user to the Auth0 login page, managing the JWT token upon successful callback, and handle setting and retrieving the token from the local store. This token is then consumed by our DrinkService (`./src/app/services/agency.service.ts`) and passed as an Authorization header when making requests to our backend.
+Including corresponding passwords..
 
-### Authorization
+name: Casting_Assistant@udacity.com
+password: Casting_Assistant
 
-The Auth0 JWT includes claims for permissions based on the user's role within the Auth0 system. This project makes use of these claims using the `auth.can(permission)` method which checks if particular permissions exist within the JWT permissions claim of the currently logged in user. This method is defined in  `./src/app/services/auth.service.ts` and is then used to enable and disable buttons in `./src/app/pages/drink-menu/drink-form/drink-form.html`.
+name: Casting_Director@udacity.com
+password: Casting_Director
+
+name: Executive_Producer@udacity.com
+password: Executive_Producer
