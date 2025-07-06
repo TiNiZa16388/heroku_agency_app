@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 export interface Movie {
   id: number;
   title: string;
-  release_date: Date;
+  release_date: string;
   actors: Array<Actor>
 }
 
@@ -100,7 +100,7 @@ export class AgencyService {
         }
       });
     } else {
-      this.http.post(this.url + '/movies/', movie, this.getHeaders())
+      this.http.post(this.url + '/movies', movie, this.getHeaders())
       .subscribe( (res: any) => {
         if (res.success) {
           this.fillMovies(res.movies);

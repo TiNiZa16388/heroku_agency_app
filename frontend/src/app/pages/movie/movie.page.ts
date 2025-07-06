@@ -24,7 +24,6 @@ export class MoviePage implements OnInit {
 
   async openForm(activeMovie: Movie = null) {
 
-
     const modal = await this.modalCtrl.create({
       component: MovieFormComponent,
       componentProps: { movie: activeMovie, isNew: !activeMovie , AgencyService: this.agency}

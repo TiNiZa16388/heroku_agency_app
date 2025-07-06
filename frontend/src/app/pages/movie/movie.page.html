@@ -11,7 +11,7 @@
      *ngFor="let idx of Object.keys(agency.movies)"
      (click)="openForm(agency.movies[idx])">
         <ion-card-header>
-          <ion-card-title>{{idx}} {{agency.movies[idx].title}}</ion-card-title>
+          <ion-card-title>{{agency.movies[idx].title}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
           <ion-list>
@@ -19,11 +19,7 @@
             <ion-list>
             <h2><u>Actors:</u></h2>
             <ul>
-              <!-- <li *ngFor="let idx2 of Object.keys(agency.movies[idx].actors)">
-                {{idx}} {{idx2}} {{agency.movies[idx].actors[idx2]}} -->
-              <li *ngFor="let actor of agency.movies[idx].actors">
-                {{idx}} {{actor.id}} {{actor.title}}
-              </li>
+              <li *ngFor="let actor of agency.movies[idx].actors"> {{actor.name}} </li>
             </ul>
             </ion-list>
           </ion-list>

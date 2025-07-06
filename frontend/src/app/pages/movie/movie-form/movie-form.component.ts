@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Actor, Movie, AgencyService } from 'src/app/services/agency.service';
-import { ModalController } from '@ionic/angular';
+import { IonDatetime, ModalController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -25,10 +25,10 @@ export class MovieFormComponent implements OnInit {
       this.movie = {
         id: -1,
         title: '',
-        release_date: new Date(),
+        release_date: '',
         actors: []
       };
-      //this.addMovie();
+      this.movie.release_date=new Date().toISOString();
     }
     this.agencyService.getActors();
   }
@@ -60,11 +60,13 @@ export class MovieFormComponent implements OnInit {
 
   saveClicked() {
     this.agencyService.saveMovie(this.movie);
+    this.agencyService.getActors();
     this.closeModal();
   }
 
   deleteClicked() {
     this.agencyService.deleteMovie(this.movie);
+    this.agencyService.getActors();
     this.closeModal();
   }
 

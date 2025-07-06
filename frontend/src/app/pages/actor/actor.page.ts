@@ -24,6 +24,8 @@ export class ActorPage implements OnInit {
 
   async openForm(activeActor: Actor = null) {
 
+    console.log('Opening Actor Form Page')
+    console.log(JSON.stringify(activeActor))
 
     const modal = await this.modalCtrl.create({
       component: ActorFormComponent,
